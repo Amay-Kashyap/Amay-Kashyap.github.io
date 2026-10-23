@@ -28,7 +28,7 @@ a { color: var(--link); text-decoration: underline; text-decoration-color: #fff;
 a:hover { text-decoration-thickness: 2px; }
 
 header { display: flex; gap: 22px; align-items: center; margin-bottom: 28px; }
-.portrait { width: 112px; height: 112px; object-fit: cover; object-position: 50% 20%; border-radius: 4px; flex: none; }
+.portrait { width: 112px; height: 112px; object-fit: cover; object-position: 50% 50%; border-radius: 4px; flex: none; }
 h1 { font-size: 28px; line-height: 1.2; margin: 0 0 6px; font-weight: 700; }
 .tag { margin: 0; font-weight: 600; }
 .sub { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
