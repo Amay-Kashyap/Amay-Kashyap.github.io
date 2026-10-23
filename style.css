@@ -24,8 +24,8 @@ main { max-width: 640px; margin: 0 auto; padding: 72px 20px 80px; }
 @media (min-width: 1001px) { .resume-inline { display: none; } }
 @media (max-width: 1000px) { .side { display: none; } }
 
-a { color: var(--link); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--fg); }
+a { color: var(--link); text-decoration: underline; text-decoration-color: #fff; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
 
 header { display: flex; gap: 22px; align-items: center; margin-bottom: 28px; }
 .portrait { width: 112px; height: 112px; object-fit: cover; object-position: 25% 30%; border-radius: 4px; flex: none; }
@@ -54,7 +54,13 @@ summary::before { content: "›"; position: absolute; left: 2px; color: var(--mu
 details[open] > summary::before { transform: rotate(90deg); }
 summary .t { font-weight: 600; }
 summary .m { color: var(--muted); font-size: 13px; text-align: right; }
-summary:hover .t { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+summary { border-radius: 3px; transition: background .15s; }
+summary:hover { background: #141414; }
+summary:hover .t { text-decoration: underline; text-decoration-color: #fff; text-underline-offset: 3px; }
+summary:hover::before { color: var(--fg); }
+summary:hover .m { font-size: 0; }
+summary:hover .m::after { content: "click to expand ↓"; font-size: 13px; color: var(--fg); }
+details[open] > summary:hover .m::after { content: "click to collapse ↑"; }
 @media (max-width: 520px) { summary { flex-direction: column; gap: 0; } summary .m { text-align: left; } }
 
 .body { padding: 2px 0 18px 18px; font-size: 14.5px; }
