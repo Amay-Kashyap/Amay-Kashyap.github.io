@@ -20,12 +20,11 @@ body {
 main { max-width: 640px; margin: 0 auto; padding: 72px 20px 80px; }
 
 .side { position: fixed; top: 72px; left: 32px; }
-.side .resume { color: var(--muted); text-decoration: none; font-size: 14px; }
-.side .resume:hover { color: var(--fg); }
-@media (max-width: 1000px) {
-  .side { position: static; padding: 24px 20px 0; max-width: 640px; margin: 0 auto; }
-  main { padding-top: 24px; }
-}
+.resume { display: inline-block; color: var(--fg); text-decoration: none; font-size: 14px; font-weight: 600; border: 1px solid var(--fg); border-radius: 4px; padding: 6px 14px; transition: background .15s, color .15s; }
+.resume:hover { background: var(--fg); color: var(--bg); }
+.resume-inline { margin-top: 12px; }
+@media (min-width: 1001px) { .resume-inline { display: none; } }
+@media (max-width: 1000px) { .side { display: none; } }
 
 a { color: var(--link); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--fg); }
@@ -65,6 +64,9 @@ summary:hover .t { text-decoration: underline; text-decoration-color: var(--line
 .out { color: var(--muted); font-size: 14px; }
 
 .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin: 12px 0; }
+.photos.tall { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.photos.tall img, .photos video { height: 220px; }
+.photos video { width: 100%; object-fit: cover; border-radius: 3px; display: block; background: #000; }
 .photos img { width: 100%; height: 130px; object-fit: cover; border-radius: 3px; display: block; }
 
 .covers { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 14px; }
