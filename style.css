@@ -77,3 +77,5 @@ summary:hover .t { text-decoration: underline; text-decoration-color: var(--line
 .posters img { aspect-ratio: 2 / 3; }
 
 footer { color: var(--muted); font-size: 13px; padding-top: 8px; }
+
+.tech { color: var(--muted); font-size: 13px; }

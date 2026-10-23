@@ -70,6 +70,7 @@
           <img src="img/swiftdx1.jpg" alt="SwiftDx pitch" loading="lazy">
           <img src="img/swiftdx2.jpg" alt="SwiftDx team call" loading="lazy">
         </div>
+        <p class="tech">MONAI-based margin assessment with confidence scoring and boundary overlays; results exported as FHIR reports.</p>
         <p class="out">
           <a href="https://amay-kashyap.github.io/virtual-staining-pitch/" target="_blank" rel="noopener">pitch</a> ·
           <a href="https://github.com/Amay-Kashyap/virtual-staining-pitch" target="_blank" rel="noopener">code</a> ·
@@ -82,6 +83,7 @@
       <summary><span class="t">RAGPhysician</span><span class="m">Clinical AI · 2025–</span></summary>
       <div class="body">
         <p>Physicians need quick, trustworthy answers from patient spreadsheets, but sensitive records can't be pasted into cloud chatbots. RAGPhysician is a private desktop app (Electron, React, TypeScript, LangChain retrieval pipeline) that answers clinical CSV queries locally, with citations back to the source rows. Now being piloted in the oncology department at Einstein School of Medicine.</p>
+        <p class="tech">Electron + React + TypeScript front end; LangChain retrieval pipeline over local CSVs with citation-backed answers.</p>
         <p class="out"><a href="https://github.com/Amay-Kashyap/Physician-LLM-app" target="_blank" rel="noopener">code</a></p>
       </div>
     </details>
@@ -90,6 +92,7 @@
       <summary><span class="t">Graph-RLM</span><span class="m">Longitudinal reasoning · 2025–</span></summary>
       <div class="body">
         <p>Reasoning over years of a breast-oncology patient's record is costly: RAG fragments the story and full-context prompting burns hundreds of thousands of tokens. Graph-RLM converts records into directed clinical graphs and lets a recursive language model walk them. On a 30-question evidence-linked benchmark it hit 100% accuracy at ~31 tokens per query, versus 100% at ~1,132 for RAG and 96.67% at ~137,000 for full context.</p>
+        <p class="tech">Records become directed clinical graphs; each of the 30 benchmark questions is tied to explicit supporting graph nodes, compared against RAG, standard RLM and full-context baselines.</p>
         <p class="out"><a href="https://github.com/Amay-Kashyap/graph-rlm-updated-" target="_blank" rel="noopener">code</a></p>
       </div>
     </details>
@@ -98,6 +101,7 @@
       <summary><span class="t">SMARCE1 pan-cancer study</span><span class="m">Genomics · 2026</span></summary>
       <div class="body">
         <p>SMARCE1's role across cancers was unclear beyond a few tumour types. I analysed expression in 148K+ patients across 12 pan-cancer studies, mapping 33 cancers, and found widespread overexpression, strongest in thymoma. Published in the Oxford Journal of Student Scholarship.</p>
+        <p class="tech">Pan-cancer cohort analysis across 148K+ patients, 12 studies and 33 cancer types.</p>
         <p class="out"><a href="https://www.oxfordjss.org/oct-2026-vol-12-issue-4/pan-cancer-relevance-of-smarce1-as-a-potential-cancer-biomarker-in-low-grade-glioma-and-other-malignancies" target="_blank" rel="noopener">paper</a></p>
       </div>
     </details>
@@ -106,6 +110,7 @@
       <summary><span class="t">Pratishruti HPV drive</span><span class="m">Community health · 2023–</span></summary>
       <div class="body">
         <p>Cervical cancer is preventable, but HPV vaccines are out of reach for many families in Assam because of cost and awareness. We ran an ICMR-backed vaccination drive that secured 10K Cervavac doses with income-based subsidies and coordinated ~100 volunteers, making it the largest HPV vaccination drive run by a non-profit. We also made 80+ home visits to breast-cancer patients. The case study was published, with me as first author.</p>
+        <p class="tech">Income-based subsidies on 10K Cervavac doses; ~100 volunteers coordinated; accompanying surveys and case study published.</p>
         <p class="out"><a href="https://www.ovid.com/jnls/aort/fulltext/10.4103/aort.aort_23_26~a-unique-initiative-human-papillomavirus-vaccination-for" target="_blank" rel="noopener">case study</a> ·
           <a href="https://timesofindia.indiatimes.com/city/guwahati/3000-women-in-assam-administered-hpv-shots-in-7-months-to-prevent-cervical-cancer/articleshow/126044122.cms" target="_blank" rel="noopener">times of india</a> ·
           <a href="https://health.medicaldialogues.in/vaccines/largest-hpv-vaccination-by-pratishruti-trust-of-assam-160879" target="_blank" rel="noopener">medical dialogues</a> ·
@@ -114,14 +119,26 @@
     </details>
 
     <details>
-      <summary><span class="t">Raman spectroscopy &amp; metagenomics</span><span class="m">RSI · Summer 2026</span></summary>
+      <summary><span class="t">Non-targeted milk adulteration detection</span><span class="m">RSI · Raman · 2026</span></summary>
       <div class="body">
-        <p>Milk adulteration is hard to catch quickly, and the North-East Indian vaginal microbiome is barely characterised. Under Prof. Utpal Tatu at IISc, with HORIBA Labs, I used Raman spectroscopy and statistical analysis to detect adulterants, and Oxford Nanopore sequencing to profile the microbiome.</p>
+        <p>Roughly 650–700 million litres of milk are consumed in India every day, and adulteration can enter anywhere along its supply chain. Most tests are built for one adulterant at a time, and ML classifiers need labelled examples of each, so none of them can flag a contaminant nobody thought to look for. We built a detector that doesn't need to know the adulterant: it learns what pure pasteurised milk looks like in Raman spectra, and flags anything that deviates from it.</p>
+        <p>Under Prof. Utpal Tatu at IISc, with HORIBA Labs, we collected Raman spectra of pure milk, built a consensus reference from 45 control spectra, and scored each test sample by how far it sits from that reference. It was tested against milk spiked with antibiotics, urea, starch, vegetable oil and water. The result is a rapid, non-destructive, ~10-minute check, and each flag can be traced back to specific spectral regions, so it stays interpretable.</p>
+        <p class="tech">Five aggregation metrics (mean, B-spline mean, median, geometric median, Wasserstein barycentre) build the reference; Euclidean deviation plus Daubechies-4 wavelet features give the authenticity score; threshold set by Youden's J. AUC 0.884 on the deployment set. Scoring only the Amide I and C–H stretch windows cut overfitting. 532 nm laser, LabRAM HR Evolution, well-plate acquisition, Savitzky–Golay smoothing and ALS baseline correction.</p>
         <div class="photos">
           <img src="img/rsi2.jpg" alt="RSI" loading="lazy">
-          <img src="img/rsi4.jpg" alt="RSI" loading="lazy">
           <img src="img/rsi1.jpg" alt="RSI" loading="lazy">
           <img src="img/rsi3.jpg" alt="RSI" loading="lazy">
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="t">North-East Indian vaginal microbiome</span><span class="m">RSI · Nanopore · 2026</span></summary>
+      <div class="body">
+        <p>Indian women are a severely understudied cohort in vaginal microbiome research: most of what we know about a "healthy" microbiome comes from other populations, and the North-East of India is barely represented at all. Without a local baseline, it is hard to say what normal looks like here, or how it relates to infections and cancers such as cervical cancer, which is a major burden in Assam. We sequenced the vaginal microbiome of North-East Indian women with Oxford Nanopore metagenomics to start building that baseline.</p>
+        <p class="tech">Oxford Nanopore metagenomic sequencing of North-East Indian cohorts, as part of the RSI research programme at IISc.</p>
+        <div class="photos">
+          <img src="img/rsi4.jpg" alt="RSI" loading="lazy">
           <img src="img/rsi5.jpg" alt="RSI" loading="lazy">
         </div>
       </div>
