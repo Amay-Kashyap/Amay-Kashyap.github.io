@@ -95,7 +95,7 @@
     <details>
       <summary><span class="t">Graph-RLM</span><span class="m">Longitudinal reasoning · 2025–</span></summary>
       <div class="body">
-        <p>Reasoning over years of a breast-oncology patient's record is costly: RAG fragments the story and full-context prompting burns hundreds of thousands of tokens. Graph-RLM converts records into directed clinical graphs and lets a recursive language model walk them. On a 30-question evidence-linked benchmark it hit 100% accuracy at ~31 tokens per query, versus 100% at ~1,132 for RAG and 96.67% at ~137,000 for full context.</p>
+        <p>Reasoning over years of a breast-oncology patient's record is costly: RAG fragments the story and full-context prompting burns hundreds of thousands of tokens. Graph-RLM converts records into directed clinical graphs and lets a recursive language model walk them. On a 30-question evidence-linked benchmark it hit 100% accuracy at ~31 tokens per query, versus 100% at ~1,132 for RAG and 96.67% at ~137,000 for full context. The benchmark is small, so these are early results rather than a final verdict, and we are actively expanding it in our internal testing.</p>
         <p class="tech">Records become directed clinical graphs; each of the 30 benchmark questions is tied to explicit supporting graph nodes, compared against RAG, standard RLM and full-context baselines.</p>
         <p class="out"><a href="https://github.com/Amay-Kashyap/graph-rlm-updated-" target="_blank" rel="noopener">code</a></p>
       </div>
