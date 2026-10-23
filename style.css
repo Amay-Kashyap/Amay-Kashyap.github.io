@@ -86,3 +86,6 @@ footer { color: var(--muted); font-size: 13px; padding-top: 8px; }
 
 .photos.full { grid-template-columns: 1fr; }
 .photos.full img { height: auto; max-height: 420px; object-fit: contain; background: #000; }
+
+.pipeline { margin: 12px 0; }
+.pipeline img { width: 100%; height: auto; display: block; border-radius: 3px; }
