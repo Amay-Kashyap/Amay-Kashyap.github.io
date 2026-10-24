@@ -89,3 +89,6 @@ footer { color: var(--muted); font-size: 13px; padding-top: 8px; }
 
 .pipeline { margin: 12px 0; }
 .pipeline img { width: 100%; height: auto; display: block; border-radius: 3px; }
+
+.photos.row { display: flex; flex-wrap: wrap; align-items: flex-start; }
+.photos.row img { width: auto; height: 220px; max-width: 100%; object-fit: contain; }
